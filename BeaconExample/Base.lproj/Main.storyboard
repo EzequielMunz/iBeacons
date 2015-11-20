@@ -1,25 +1,142 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeaconExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-wb-chx">
+                                <rect key="frame" x="12" y="48" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proximity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-Gg-0hd">
+                                <rect key="frame" x="12" y="113" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Far-Near-Immediate-Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7D-eY-exk">
+                                <rect key="frame" x="12" y="152" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsX-XT-Wdj">
+                                <rect key="frame" x="12" y="422" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rVP-XE-tCg">
+                                <rect key="frame" x="12" y="458" width="296" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-fB-SBF">
+                                <rect key="frame" x="12" y="81" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hd-Kb-Apo">
+                                <rect key="frame" x="12" y="274" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FF-gi-eqw">
+                                <rect key="frame" x="12" y="192" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCI-CW-OdD">
+                                <rect key="frame" x="12" y="306" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proximity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyt-Zz-pfc">
+                                <rect key="frame" x="12" y="338" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Far-Near-Immediate-Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSk-r0-N01">
+                                <rect key="frame" x="12" y="378" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R74-PY-SdD">
+                                <rect key="frame" x="12" y="228" width="296" height="2"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4hd-Kb-Apo" secondAttribute="trailing" constant="-4" id="2GK-Xq-tz6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kyt-Zz-pfc" secondAttribute="trailing" constant="-4" id="2KN-KY-9J5"/>
+                            <constraint firstItem="FCI-CW-OdD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="2xe-Uj-whO"/>
+                            <constraint firstItem="rVP-XE-tCg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="3sD-mi-uFt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ofQ-fB-SBF" secondAttribute="trailing" constant="-4" id="4vn-qT-mVN"/>
+                            <constraint firstItem="R74-PY-SdD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="8Eu-kX-hYy"/>
+                            <constraint firstItem="S7D-eY-exk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="CPD-FP-S8i"/>
+                            <constraint firstItem="4hd-Kb-Apo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="DRU-oT-P1j"/>
+                            <constraint firstItem="rVP-XE-tCg" firstAttribute="top" secondItem="zsX-XT-Wdj" secondAttribute="bottom" constant="15" id="KWS-9U-w4i"/>
+                            <constraint firstItem="3FF-gi-eqw" firstAttribute="top" secondItem="S7D-eY-exk" secondAttribute="bottom" constant="19" id="LCa-gN-Pg2"/>
+                            <constraint firstItem="ofQ-fB-SBF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="Lil-Gt-aYd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rVP-XE-tCg" secondAttribute="trailing" constant="-4" id="LmV-sL-a2i"/>
+                            <constraint firstItem="WSk-r0-N01" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="NXM-nq-0us"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zsX-XT-Wdj" secondAttribute="trailing" constant="-4" id="Ndp-Zv-ohu"/>
+                            <constraint firstItem="zsX-XT-Wdj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="O92-vp-sbj"/>
+                            <constraint firstItem="GRT-Gg-0hd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="QNz-kI-LbR"/>
+                            <constraint firstItem="3FF-gi-eqw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="Rgw-Rg-X42"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fEd-wb-chx" secondAttribute="trailing" constant="-4" id="Tqg-5Y-K3T"/>
+                            <constraint firstItem="zsX-XT-Wdj" firstAttribute="top" secondItem="WSk-r0-N01" secondAttribute="bottom" constant="23" id="Vvz-9J-tFk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3FF-gi-eqw" secondAttribute="trailing" constant="-4" id="WQa-wq-fdI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R74-PY-SdD" secondAttribute="trailing" constant="-4" id="Yhh-EK-1io"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WSk-r0-N01" secondAttribute="trailing" constant="-4" id="aRE-Hx-np8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S7D-eY-exk" secondAttribute="trailing" constant="-4" id="bFV-j2-ePK"/>
+                            <constraint firstItem="fEd-wb-chx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="dFI-B8-k7m"/>
+                            <constraint firstItem="fEd-wb-chx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="dQe-4e-8Xk"/>
+                            <constraint firstItem="kyt-Zz-pfc" firstAttribute="top" secondItem="FCI-CW-OdD" secondAttribute="bottom" constant="11" id="ggs-0e-cfV"/>
+                            <constraint firstItem="S7D-eY-exk" firstAttribute="top" secondItem="GRT-Gg-0hd" secondAttribute="bottom" constant="18" id="kqO-h2-Evf"/>
+                            <constraint firstItem="FCI-CW-OdD" firstAttribute="top" secondItem="4hd-Kb-Apo" secondAttribute="bottom" constant="11" id="laY-oy-Km6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FCI-CW-OdD" secondAttribute="trailing" constant="-4" id="nxd-N1-5U3"/>
+                            <constraint firstItem="4hd-Kb-Apo" firstAttribute="top" secondItem="R74-PY-SdD" secondAttribute="bottom" constant="44" id="p0P-pt-l5y"/>
+                            <constraint firstItem="WSk-r0-N01" firstAttribute="top" secondItem="kyt-Zz-pfc" secondAttribute="bottom" constant="19" id="rl4-xb-oBH"/>
+                            <constraint firstItem="ofQ-fB-SBF" firstAttribute="top" secondItem="fEd-wb-chx" secondAttribute="bottom" constant="12" id="sc2-Ie-QYK"/>
+                            <constraint firstItem="kyt-Zz-pfc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="tbb-et-l9v"/>
+                            <constraint firstItem="R74-PY-SdD" firstAttribute="top" secondItem="3FF-gi-eqw" secondAttribute="bottom" constant="15" id="tcl-M7-WUL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRT-Gg-0hd" secondAttribute="trailing" constant="-4" id="vm8-ST-tF2"/>
+                            <constraint firstItem="GRT-Gg-0hd" firstAttribute="top" secondItem="ofQ-fB-SBF" secondAttribute="bottom" constant="11" id="y68-ZB-EQk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accuracyProgressBar1" destination="R74-PY-SdD" id="Z90-SZ-fGH"/>
+                        <outlet property="accuracyProgressBar2" destination="rVP-XE-tCg" id="CYm-Wo-8yJ"/>
+                        <outlet property="beaconIDLabel1" destination="ofQ-fB-SBF" id="BTr-MD-SMe"/>
+                        <outlet property="beaconIDLabel2" destination="FCI-CW-OdD" id="0UC-Fb-XEY"/>
+                        <outlet property="beaconProximityLabel1" destination="S7D-eY-exk" id="uuV-dy-S1R"/>
+                        <outlet property="beaconProximityLabel2" destination="WSk-r0-N01" id="CT0-ib-Kat"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="336"/>
         </scene>
     </scenes>
 </document>

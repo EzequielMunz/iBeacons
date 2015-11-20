@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    var locationManager : CLLocationManager!
+    
+    var beaconDelegate : BeaconDelegate?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startMonitoringForRegion(RegionsManager.sharedInstance.region1)
+        locationManager.startMonitoringForRegion(RegionsManager.sharedInstance.region2)
+        
+        beaconDelegate = window?.rootViewController as! ViewController
+        
         return true
     }
 
@@ -41,6 +54,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    //--------------------------------------
+    // MARK: CLManagerDelegate
+    //--------------------------------------
+    
+    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
+        locationManager.requestStateForRegion(region)
+    }
+    
+    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
+        if state == CLRegionState.Inside
+        {
+            beaconDelegate?.didEnterRegion(region as! CLBeaconRegion)
+            locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
+            launchNotification("Se ha detectado un beacon cerca de tu posicion")
+        }
+        else {
+            beaconDelegate?.didExitRegion(region as! CLBeaconRegion)
+            locationManager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        //Start Ranging
+        if region.isKindOfClass(CLBeaconRegion) {
+            locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
+            launchNotification("Se ha detectado un beacon cerca de tu posicion")
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        //Stop Ranging here
+        if region.isKindOfClass(CLBeaconRegion) {
+            locationManager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        if let beacon : CLBeacon = beacons.first
+        {
+            // Do whatever you want :D
+        }
+    }
 
+    func launchNotification (alertDesc : String) {
+        let notif : UILocalNotification = UILocalNotification()
+        notif.fireDate = NSDate()
+        notif.alertBody = alertDesc
+        UIApplication.sharedApplication().scheduleLocalNotification(notif)
+    }
 }
 
